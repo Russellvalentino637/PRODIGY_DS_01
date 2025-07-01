@@ -1,1 +1,1 @@
-# PRODIGY_DS_01
+![Gender Distribution](gender_distribution.png)
