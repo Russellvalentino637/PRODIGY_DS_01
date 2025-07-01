@@ -11,5 +11,4 @@ plt.xlabel('Gender')
 plt.ylabel('Count')
 plt.grid(axis='y')
 plt.show()
-
-
+plt.savefig('gender_distribution.png')
