@@ -1,0 +1,15 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+data = {
+    'Gender': ['Male', 'Female', 'Male', 'Female', 'Female', 'Male', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female']
+}
+df = pd.DataFrame(data)
+gender_counts = df['Gender'].value_counts()
+plt.bar(gender_counts.index, gender_counts.values, color=['blue', 'pink'])
+plt.title('Gender Distribution')
+plt.xlabel('Gender')
+plt.ylabel('Count')
+plt.grid(axis='y')
+plt.show()
+
+
