@@ -1,14 +1,27 @@
-import pandas as pd
 import matplotlib.pyplot as plt
-data = {
-    'Gender': ['Male', 'Female', 'Male', 'Female', 'Female', 'Male', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female']
-}
-df = pd.DataFrame(data)
-gender_counts = df['Gender'].value_counts()
-plt.bar(gender_counts.index, gender_counts.values, color=['blue', 'pink'])
-plt.title('Gender Distribution')
+import seaborn as sns
+
+
+population_data = ['Male', 'Female', 'Female', 'Male', 'Female', 'Male', 'Other', 'Female', 'Male', 'Male']
+
+
+gender_counts = {}
+for gender in population_data:
+    gender_counts[gender] = gender_counts.get(gender, 0) + 1
+
+
+sns.set(style="whitegrid")
+plt.figure(figsize=(8, 5))
+sns.barplot(x=list(gender_counts.keys()), y=list(gender_counts.values()), palette="pastel")
+
+
 plt.xlabel('Gender')
-plt.ylabel('Count')
-plt.grid(axis='y')
-plt.show()
+plt.ylabel('population Count')
+plt.title('Gender Distribution in Population')
+plt.tight_layout()
+
+
 plt.savefig('gender_distribution.png')
+
+
+plt.show()
